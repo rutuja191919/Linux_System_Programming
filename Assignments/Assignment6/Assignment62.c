@@ -26,9 +26,10 @@ int main(int argc, char *argv[])
 
     printf("%d",sobj.st_size);
 
-    lseek(fd, sobj.st_size, SEEK_SET);
+    lseek(fd, 1024, sobj.st_size);
+    //lseek(fd, 1024, SEEK_END);
 
-    write(fd, Buffer, sizeof(Buffer));
+    write(fd, Buffer, 1);
     
     return 0;
 }
