@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 {
     int fd = 0;
     char Buffer[1024] = "";
-    struct stat sobj;
+    //struct stat sobj;
  
     if(argc != 2)
     {
@@ -22,12 +22,12 @@ int main(int argc, char *argv[])
         return -1;
     } 
 
-    stat(argv[1],&sobj);
+    //stat(argv[1],&sobj);
 
-    printf("%d",sobj.st_size);
+    //printf("%d",sobj.st_size);
 
-    lseek(fd, 1024, sobj.st_size);
-    //lseek(fd, 1024, SEEK_END);
+    //lseek(fd, 1024, sobj.st_size);
+    lseek(fd, 1024, SEEK_END);
 
     write(fd, Buffer, 1);
     
